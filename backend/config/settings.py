@@ -70,15 +70,7 @@ DATABASES = {
         'PASSWORD': 'Kimora123',
         'HOST': '127.0.0.1',
         'PORT': '1433',
-    },
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'mega',
-    #     'USER': 'postgres',
-    #     'PASSWORD': 'Kimora123',
-    #     'HOST': '127.0.0.1',
-    #     'PORT': '5432',
-    # },
+    }
 }
 
 
@@ -106,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Jakarta'
 
 USE_I18N = True
 
@@ -126,7 +118,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
