@@ -64,13 +64,21 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'sql_server.pyodbc',
         'NAME': 'mega',
-        'USER': 'postgres',
+        'USER': 'sa',
         'PASSWORD': 'Kimora123',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
+        'PORT': '1433',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'mega',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'Kimora123',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5432',
+    # },
 }
 
 
