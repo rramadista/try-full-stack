@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'office-ui-fabric-react/lib/Link';
+
 
 const Footer = () => (
     <div className="footer-container">

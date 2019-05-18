@@ -29,12 +29,17 @@ class DefaultLayout extends Component {
                 <div style={{ boxShadow: Depths.depth64 }} >
                     Depth 64
                 </div>
-                <i class="ms-Icon ms-Icon--AccessLogo" aria-hidden="true">
-                    Icon Access
+                
+                <i class="ms-Icon ms-Icon--WordLogo" aria-hidden="true">
+                    Word Access
                 </i>
-                <div class="ms-BrandIcon--icon96 ms-BrandIcon--word" />
-                <Icon {...getFileTypeIconProps({ extension: 'docx', size: 96, imageFileType: 'png' })} />
-                <Icon {...getFileTypeIconProps({ type: FileIconType.folder, size: 96, imageFileType: 'svg' })} />
+                <div class="ms-BrandIcon--icon48 ms-BrandIcon--word" />
+                <div>
+                    <Icon {...getFileTypeIconProps({ extension: 'docx', size: 48, imageFileType: 'png' })} />
+                </div>
+                <div>
+                    <Icon {...getFileTypeIconProps({ type: FileIconType.folder, size: 48, imageFileType: 'svg' })} />
+                </div>
                 <div class="ms-Grid" dir="ltr">
                     <div class="ms-Grid-row">
                         <div class="ms-Grid-col ms-sm6 ms-md4 ms-lg2" style={{ boxShadow: Depths.depth64 }} >A</div>

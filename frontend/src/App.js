@@ -16,6 +16,11 @@ const DefaultLayout = Loadable({
 	loading
 })
 
+const Layout = Loadable({
+	loader: () => import('./components/templates/Layout'),
+	loading
+})
+
 class App extends React.Component {
 	render() {
 		return (
@@ -25,7 +30,8 @@ class App extends React.Component {
 					<Route exact path="/register" name="Register Page" component={Register} />
 					<Route exact path="/404" name="Page 404" component={Page404} />
 					<Route exact path="/500" name="Page 500" component={Page500} /> */}
-					<Route exact path="/" name="Home" component={DefaultLayout} />
+					<Route exact path="/layout" component={DefaultLayout} />
+					<Route path="/" component={Layout} />
 				</Switch>
 			</Router>
 		);

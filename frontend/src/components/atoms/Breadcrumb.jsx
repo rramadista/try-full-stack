@@ -1,5 +1,4 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Breadcrumb } from 'office-ui-fabric-react/lib/Breadcrumb';
 
 const AppBreadcrumb = props => (
