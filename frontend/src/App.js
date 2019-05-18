@@ -1,71 +1,33 @@
 import React from 'react';
-
-import 'antd/dist/antd.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+import { Spinner, SpinnerSize } from 'office-ui-fabric-react/lib/Spinner';
 import './App.css';
-import { Layout, Menu, Icon, Breadcrumb } from 'antd';
 
-const { Header, Sider, Content, Footer } = Layout;
+
+const loading = () => (
+	<div>
+		<Spinner label="Loading..." size={SpinnerSize.large}/>
+	</div>
+)
+
+const DefaultLayout = Loadable({
+	loader: () => import('./components/templates/DefaultLayout'),
+	loading
+})
 
 class App extends React.Component {
-	state = {
-		collapsed: false,
-	};
-
-	toggle = () => {
-		this.setState({
-			collapsed: !this.state.collapsed,
-		});
-	}
-
 	render() {
 		return (
-			<Layout>
-				<Sider trigger={null} collapsible collapsed={this.state.collapsed}>
-					<div className="logo" />
-					<Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-						<Menu.Item key="1">
-							<Icon type="desktop" />
-							<span>Home</span>
-						</Menu.Item>
-						<Menu.Item key="2">
-							<Icon type="bank" />
-							<span>Branch & Office</span>
-						</Menu.Item>
-						<Menu.Item key="3">
-							<Icon type="cluster" />
-							<span>Organization</span>
-						</Menu.Item>
-						<Menu.Item key="4">
-							<Icon type="team" />
-							<span>Position</span>
-						</Menu.Item>
-						<Menu.Item key="5">
-							<Icon type="tool" />
-							<span>Settings</span>
-						</Menu.Item>
-					</Menu>
-				</Sider>
-				<Layout>
-					<Header style={{ background: '#fff', padding: 0 }}>
-						<Icon
-							className="trigger"
-							type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-							onClick={this.toggle}
-						/>
-					</Header>
-					<Content style={{ padding: '0 20px' }}>
-						<Breadcrumb style={{ margin: '16px 0' }}>
-							<Breadcrumb.Item>Home</Breadcrumb.Item>
-							<Breadcrumb.Item>Organization</Breadcrumb.Item>
-							<Breadcrumb.Item>List</Breadcrumb.Item>
-						</Breadcrumb>
-						<div style={{ background: '#fff', padding: 24, minHeight: 800 }}>Content</div>
-					</Content>
-					<Footer style={{ textAlign: 'center' }}>
-						OD HCMG ©2019 Created by RR
-      				</Footer>
-				</Layout>
-			</Layout>
+			<Router>
+				<Switch>
+					{/* <Route exact path="/login" name="Login Page" component={Login} />
+					<Route exact path="/register" name="Register Page" component={Register} />
+					<Route exact path="/404" name="Page 404" component={Page404} />
+					<Route exact path="/500" name="Page 500" component={Page500} /> */}
+					<Route exact path="/" name="Home" component={DefaultLayout} />
+				</Switch>
+			</Router>
 		);
 	}
 }

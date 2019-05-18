@@ -6,6 +6,7 @@ from api import views
 router = routers.DefaultRouter()
 router.register('users', views.UserViewSet)
 router.register('groups', views.GroupViewSet)
+router.register('offices', views.OfficeViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

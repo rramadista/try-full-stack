@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User, Group
+from api.models import Office
 from rest_framework import serializers
 
 
@@ -7,8 +8,12 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ('url', 'username', 'email', 'groups')
 
-
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ('url', 'name')
+
+class OfficeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Office
+        fields = '__all__'
